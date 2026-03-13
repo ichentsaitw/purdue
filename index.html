@@ -63,13 +63,13 @@
     .hero-frame {
       position: relative;
       overflow: hidden;
-      min-height: 720px;
       border-radius: 40px;
       box-shadow: var(--shadow);
-      color: #fff9ef;
+      color: var(--ink);
       background:
-        linear-gradient(118deg, rgba(19, 18, 17, 0.92) 12%, rgba(19, 18, 17, 0.68) 48%, rgba(19, 18, 17, 0.26) 100%),
-        url("https://engineering.purdue.edu/Honors/controls/block_settings/banner_2025-05-29-15-23-24-565/honors-hero-1520x960-001.jpg") center/cover no-repeat;
+        radial-gradient(circle at top right, rgba(177, 129, 41, 0.14), transparent 28%),
+        linear-gradient(180deg, rgba(255, 251, 244, 0.98), rgba(248, 241, 228, 0.96));
+      border: 1px solid var(--line);
     }
 
     .hero-topbar {
@@ -86,9 +86,8 @@
       gap: 12px;
       padding: 10px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 249, 239, 0.2);
-      background: rgba(255, 249, 239, 0.08);
-      backdrop-filter: blur(10px);
+      border: 1px solid rgba(23, 21, 18, 0.12);
+      background: rgba(255, 255, 255, 0.72);
       font-size: 0.94rem;
     }
 
@@ -111,9 +110,9 @@
     }
 
     .nav a {
-      color: rgba(255, 249, 239, 0.94);
-      border: 1px solid rgba(255, 249, 239, 0.18);
-      background: rgba(255, 249, 239, 0.06);
+      color: var(--ink);
+      border: 1px solid rgba(23, 21, 18, 0.12);
+      background: rgba(255, 255, 255, 0.64);
     }
 
     .nav a:hover,
@@ -139,12 +138,12 @@
       display: inline-block;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(255, 249, 239, 0.12);
-      border: 1px solid rgba(255, 249, 239, 0.18);
+      background: rgba(177, 129, 41, 0.1);
+      border: 1px solid rgba(177, 129, 41, 0.18);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 0.8rem;
-      color: #ffe4ab;
+      color: var(--bronze);
     }
 
     h1,
@@ -167,7 +166,7 @@
       margin: 18px 0 0;
       max-width: 66ch;
       font-size: 1.06rem;
-      color: rgba(255, 249, 239, 0.92);
+      color: var(--muted);
     }
 
     .action-row {
@@ -191,9 +190,9 @@
     }
 
     .button.secondary {
-      color: #fff9ef;
-      border: 1px solid rgba(255, 249, 239, 0.2);
-      background: rgba(255, 249, 239, 0.08);
+      color: var(--ink);
+      border: 1px solid rgba(23, 21, 18, 0.12);
+      background: rgba(255, 255, 255, 0.68);
     }
 
     .hero-side {
@@ -212,9 +211,8 @@
 
     .glass-card {
       padding: 20px;
-      border: 1px solid rgba(255, 249, 239, 0.18);
-      background: rgba(255, 249, 239, 0.1);
-      backdrop-filter: blur(14px);
+      border: 1px solid rgba(23, 21, 18, 0.1);
+      background: rgba(255, 255, 255, 0.62);
     }
 
     .glass-card strong {
@@ -228,7 +226,7 @@
 
     .glass-card p {
       margin: 0;
-      color: rgba(255, 249, 239, 0.92);
+      color: var(--muted);
     }
 
     .mini-photos {
@@ -243,8 +241,8 @@
       overflow: hidden;
       border-radius: 24px;
       position: relative;
-      border: 1px solid rgba(255, 249, 239, 0.16);
-      background: rgba(255, 249, 239, 0.08);
+      border: 1px solid rgba(23, 21, 18, 0.1);
+      background: rgba(255, 255, 255, 0.6);
     }
 
     .mini-photos img {
@@ -495,7 +493,7 @@
         <div class="hero-grid">
           <div>
             <span class="eyebrow">For an admitted First-Year Engineering student</span>
-            <h1>你已經進 Purdue 了。接下來，是把四年走穩。</h1>
+            <h1>進 Purdue，又進 Honors，你很厲害。接下來四年，繼續加油。</h1>
             <p class="lead">
               這頁是寫給一位已經錄取 Purdue First-Year Engineering、預計之後走 Electrical Engineering，
               而且也進了 Honors 的新生。它不是招生文案，而是「到了學校之後，你該注意什麼、第一年會發生什麼、未來四年大概怎麼展開」的暖身地圖。
