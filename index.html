@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Purdue University Engineering 與 Honors Program 中文介紹，整理官方重點、申請流程與校園特色。">
   <title>Purdue Engineering & Honors Guide</title>
+  <link rel="icon" type="image/x-icon" href="https://marcom.purdue.edu/app/mu-plugins/boilerup-wp/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://marcom.purdue.edu/app/mu-plugins/boilerup-wp/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://marcom.purdue.edu/app/mu-plugins/boilerup-wp/favicon/apple-icon-180x180.png">
   <style>
     :root {
-      --bg: #f5efe2;
-      --paper: rgba(255, 250, 241, 0.86);
-      --ink: #1c1a17;
-      --muted: #5e5548;
-      --gold: #c28f2c;
-      --gold-deep: #8d641a;
-      --black: #1f1f1f;
-      --line: rgba(28, 26, 23, 0.12);
-      --shadow: 0 18px 48px rgba(31, 31, 31, 0.12);
-      --radius: 24px;
+      --bg: #efe6d3;
+      --paper: rgba(255, 251, 244, 0.82);
+      --paper-strong: rgba(255, 251, 244, 0.94);
+      --ink: #171512;
+      --muted: #5a5248;
+      --gold: #b18129;
+      --gold-soft: #d8b064;
+      --bronze: #6f5222;
+      --night: #171717;
+      --line: rgba(23, 21, 18, 0.12);
+      --shadow: 0 24px 64px rgba(23, 21, 18, 0.16);
+      --radius: 28px;
+      --radius-lg: 36px;
     }
 
     * {
@@ -28,313 +35,460 @@
 
     body {
       margin: 0;
-      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(194, 143, 44, 0.22), transparent 28%),
-        radial-gradient(circle at top right, rgba(31, 31, 31, 0.08), transparent 22%),
-        linear-gradient(180deg, #faf6ed 0%, #f2ead8 100%);
+      font-family: "Aptos", "Segoe UI", "Noto Sans TC", sans-serif;
       line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(177, 129, 41, 0.18), transparent 24%),
+        radial-gradient(circle at top right, rgba(23, 21, 18, 0.08), transparent 18%),
+        linear-gradient(180deg, #f7f1e5 0%, #ecdfc7 100%);
     }
 
-    .frame {
-      width: min(1160px, calc(100% - 32px));
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
     }
 
     .hero {
-      padding: 32px 0 18px;
+      padding: 28px 0 18px;
     }
 
-    .hero-shell {
+    .hero-frame {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(31, 31, 31, 0.98), rgba(61, 49, 27, 0.95));
-      color: #fff8ea;
-      border-radius: 36px;
+      min-height: 720px;
+      border-radius: 40px;
       box-shadow: var(--shadow);
-      padding: 34px;
+      background:
+        linear-gradient(120deg, rgba(19, 18, 17, 0.92) 12%, rgba(19, 18, 17, 0.66) 48%, rgba(19, 18, 17, 0.24) 100%),
+        url("https://engineering.purdue.edu/Honors/controls/block_settings/banner_2025-05-29-15-23-24-565/honors-hero-1520x960-001.jpg") center/cover no-repeat;
+      color: #fff9ef;
+      isolation: isolate;
     }
 
-    .hero-shell::before,
-    .hero-shell::after {
+    .hero-frame::before {
       content: "";
       position: absolute;
-      border-radius: 999px;
-      background: rgba(194, 143, 44, 0.18);
-      filter: blur(2px);
-    }
-
-    .hero-shell::before {
+      inset: auto auto -90px -80px;
       width: 280px;
       height: 280px;
-      right: -100px;
-      top: -70px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216, 176, 100, 0.36), transparent 70%);
+      z-index: 0;
     }
 
-    .hero-shell::after {
-      width: 220px;
-      height: 220px;
-      left: -40px;
-      bottom: -120px;
+    .hero-topbar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 24px 28px 0;
     }
 
-    .tag {
+    .mark {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border: 1px solid rgba(255, 248, 234, 0.2);
+      gap: 12px;
+      padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(255, 248, 234, 0.08);
-      font-size: 14px;
-      letter-spacing: 0.04em;
+      border: 1px solid rgba(255, 249, 239, 0.22);
+      background: rgba(255, 249, 239, 0.08);
+      backdrop-filter: blur(10px);
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
     }
 
-    h1, h2, h3 {
-      margin: 0;
-      line-height: 1.1;
+    .mark strong {
+      color: #ffd98d;
     }
 
-    h1 {
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      margin-top: 18px;
-      max-width: 10ch;
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-links a,
+    .button {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 11px 17px;
+      transition: transform 0.18s ease, background-color 0.18s ease;
+    }
+
+    .nav-links a {
+      border: 1px solid rgba(255, 249, 239, 0.18);
+      background: rgba(255, 249, 239, 0.06);
+      color: rgba(255, 249, 239, 0.94);
+    }
+
+    .nav-links a:hover,
+    .button:hover,
+    .source-card:hover,
+    .photo-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: end;
+      padding: 38px 28px 30px;
     }
 
     .hero-copy {
-      display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 28px;
-      margin-top: 28px;
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 249, 239, 0.1);
+      border: 1px solid rgba(255, 249, 239, 0.16);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: #ffe0a2;
+    }
+
+    h1,
+    h2,
+    h3,
+    .stat-value {
+      font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      letter-spacing: -0.02em;
+      margin: 0;
+      line-height: 1.05;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      max-width: 10ch;
     }
 
     .lead {
+      margin: 18px 0 0;
+      max-width: 60ch;
       font-size: 1.08rem;
-      max-width: 56ch;
-      color: rgba(255, 248, 234, 0.9);
+      color: rgba(255, 249, 239, 0.9);
     }
 
-    .hero-panel {
-      background: rgba(255, 248, 234, 0.08);
-      border: 1px solid rgba(255, 248, 234, 0.14);
-      border-radius: 24px;
-      padding: 22px;
-      backdrop-filter: blur(12px);
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
     }
 
-    .hero-panel strong {
-      display: block;
-      color: #f4c76a;
-      font-size: 0.92rem;
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .button.primary {
+      color: #fff9ef;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      box-shadow: 0 12px 28px rgba(177, 129, 41, 0.3);
+    }
+
+    .button.secondary {
+      color: #fff9ef;
+      border: 1px solid rgba(255, 249, 239, 0.2);
+      background: rgba(255, 249, 239, 0.08);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .glass-card,
+    .photo-card,
+    .info-card,
+    .source-card {
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 249, 239, 0.18);
+      background: rgba(255, 249, 239, 0.1);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 16px 38px rgba(23, 21, 18, 0.16);
+    }
+
+    .glass-card {
+      padding: 20px;
+    }
+
+    .glass-card strong {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #ffd98d;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 8px;
+      font-size: 0.8rem;
+    }
+
+    .glass-card p {
+      margin: 0;
+      color: rgba(255, 249, 239, 0.92);
+    }
+
+    .mini-photos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-photos figure {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 24px;
+      min-height: 190px;
+      position: relative;
+    }
+
+    .mini-photos img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mini-photos figcaption {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(17, 16, 14, 0.56);
+      color: #fff9ef;
+      font-size: 0.9rem;
     }
 
     .stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 22px;
+      gap: 16px;
+      margin-top: 18px;
     }
 
     .stat {
-      background: var(--paper);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 18px;
-      color: var(--ink);
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: var(--paper-strong);
+      border: 1px solid rgba(23, 21, 18, 0.08);
+      box-shadow: var(--shadow);
     }
 
-    .stat b {
-      display: block;
-      font-size: 1.5rem;
-      color: var(--gold-deep);
-      margin-bottom: 4px;
+    .stat-value {
+      color: var(--bronze);
+      font-size: 1.8rem;
+      margin-bottom: 6px;
     }
 
     main {
-      padding: 14px 0 56px;
+      padding: 10px 0 54px;
     }
 
     .section {
       margin-top: 22px;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
       box-shadow: var(--shadow);
-      overflow: hidden;
     }
 
     .section-head {
       display: flex;
       justify-content: space-between;
       align-items: end;
-      gap: 20px;
-      padding: 28px 28px 18px;
+      gap: 18px;
+      padding: 28px 30px 18px;
       border-bottom: 1px solid var(--line);
       background:
-        linear-gradient(180deg, rgba(194, 143, 44, 0.1), rgba(255, 250, 241, 0));
+        linear-gradient(180deg, rgba(177, 129, 41, 0.09), rgba(255, 251, 244, 0.02));
     }
 
     .section-head p {
       margin: 0;
-      max-width: 56ch;
+      max-width: 62ch;
       color: var(--muted);
     }
 
-    .grid {
+    .layout,
+    .gallery-grid,
+    .card-grid {
       display: grid;
       gap: 18px;
-      padding: 24px 28px 28px;
+      padding: 24px 30px 30px;
     }
 
-    .grid.two {
+    .layout.two,
+    .card-grid.two {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .grid.three {
+    .card-grid.three,
+    .gallery-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 22px;
+    .info-card {
       padding: 22px;
-      background: rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid rgba(23, 21, 18, 0.1);
     }
 
-    .card h3 {
-      font-size: 1.15rem;
+    .info-card h3 {
+      font-size: 1.22rem;
       margin-bottom: 10px;
     }
 
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--gold-deep);
-      margin-bottom: 10px;
+    .info-card p {
+      margin: 0;
     }
 
-    ul {
-      margin: 10px 0 0;
+    .info-card ul {
+      margin: 12px 0 0;
       padding-left: 20px;
     }
 
-    li + li {
+    .info-card li + li {
       margin-top: 8px;
     }
 
     .timeline {
-      padding: 24px 28px 28px;
+      padding: 24px 30px 30px;
       display: grid;
-      gap: 18px;
+      gap: 16px;
     }
 
     .step {
       display: grid;
-      grid-template-columns: 100px 1fr;
+      grid-template-columns: 96px 1fr;
       gap: 16px;
-      align-items: start;
       padding: 18px;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.5);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid rgba(23, 21, 18, 0.09);
     }
 
-    .step .label {
-      font-weight: 700;
-      color: var(--gold-deep);
-      font-size: 0.95rem;
-      text-transform: uppercase;
+    .step-label {
+      color: var(--bronze);
+      font-weight: 800;
       letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
+    .step h3,
+    .photo-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.16rem;
     }
 
-    a.button,
-    a.source-link {
-      text-decoration: none;
+    .gallery-grid {
+      align-items: stretch;
     }
 
-    a.button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      color: #fff8ea;
-      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
-      box-shadow: 0 10px 24px rgba(141, 100, 26, 0.25);
+    .photo-card {
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid rgba(23, 21, 18, 0.08);
+      transition: transform 0.18s ease;
     }
 
-    a.button.alt {
-      color: var(--ink);
-      background: rgba(255, 248, 234, 0.9);
-      border: 1px solid rgba(255, 248, 234, 0.6);
-      box-shadow: none;
+    .photo-card img {
+      width: 100%;
+      aspect-ratio: 1.08;
+      object-fit: cover;
+    }
+
+    .photo-copy {
+      padding: 18px;
+    }
+
+    .photo-copy p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .source-list {
-      padding: 8px 28px 28px;
+      padding: 18px 30px 30px;
       display: grid;
       gap: 12px;
     }
 
-    .source-link {
+    .source-card {
       display: block;
-      color: var(--ink);
       padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
+      border-radius: 22px;
       background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(23, 21, 18, 0.08);
+      text-decoration: none;
       transition: transform 0.18s ease, border-color 0.18s ease;
     }
 
-    .source-link:hover {
-      transform: translateY(-2px);
-      border-color: rgba(141, 100, 26, 0.4);
-    }
-
-    .source-link strong {
+    .source-card strong {
       display: block;
       margin-bottom: 4px;
     }
 
+    .source-card:hover {
+      border-color: rgba(111, 82, 34, 0.34);
+    }
+
     .footnote {
-      padding: 0 28px 26px;
+      padding: 0 30px 28px;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    @media (max-width: 900px) {
-      .hero-copy,
-      .grid.two,
-      .grid.three {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 980px) {
+      .hero-grid,
+      .layout.two,
+      .card-grid.two,
+      .card-grid.three,
+      .gallery-grid,
       .stats {
         grid-template-columns: 1fr;
       }
+
+      .hero-frame {
+        min-height: auto;
+      }
     }
 
-    @media (max-width: 640px) {
-      .hero-shell {
-        padding: 24px;
+    @media (max-width: 720px) {
+      .hero-topbar {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
       }
 
       .section-head,
-      .grid,
+      .layout,
+      .card-grid,
+      .gallery-grid,
       .timeline,
       .source-list,
       .footnote {
@@ -342,49 +496,81 @@
         padding-right: 20px;
       }
 
-      .step {
+      .hero-grid {
+        padding: 28px 20px 24px;
+      }
+
+      .hero-topbar {
+        padding: 20px 20px 0;
+      }
+
+      .mini-photos {
         grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <div class="frame">
+  <div class="shell">
     <header class="hero">
-      <div class="hero-shell">
-        <div class="tag">Purdue University / Engineering / Honors</div>
-        <h1>Purdue 工程學院與 Honors 重點整理</h1>
-        <div class="hero-copy">
-          <div>
+      <div class="hero-frame">
+        <div class="hero-topbar">
+          <div class="mark"><strong>Purdue</strong> Engineering + Honors Guide</div>
+          <nav class="nav-links">
+            <a href="#engineering">Engineering</a>
+            <a href="#honors">Honors</a>
+            <a href="#gallery">Campus Life</a>
+            <a href="#sources">Sources</a>
+          </nav>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">West Lafayette / Future Engineers / Honors College</span>
+            <h1>Purdue 工程路線，做得更有未來感一點。</h1>
             <p class="lead">
-              這頁整理的是 Purdue University 官方網站上的 engineering 與 honors 資訊，特別聚焦在
-              West Lafayette 校區的 First-Year Engineering 與 John Martinson Honors College，方便你快速看懂
-              「怎麼進、怎麼學、honors 有什麼差別」。
+              這頁把 Purdue University 官方網站的 engineering 與 honors 資訊整理成一個更好讀的中文入口，
+              不只講申請流程，也把校園氛圍、學生實作感與 Honors 的節奏一起放進來。
             </p>
-            <div class="cta-row">
-              <a class="button" href="#engineering">看 Engineering</a>
-              <a class="button alt" href="#honors">看 Honors</a>
+            <div class="action-row">
+              <a class="button primary" href="#engineering">先看工程制度</a>
+              <a class="button secondary" href="#honors">再看 Honors</a>
+            </div>
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-value">17+</div>
+                West Lafayette 工程方向可探索，再決定 major。
+              </div>
+              <div class="stat">
+                <div class="stat-value">4 Pillars</div>
+                Honors College 核心主軸涵蓋學術、研究、社群與領導。
+              </div>
+              <div class="stat">
+                <div class="stat-value">Nov. 1</div>
+                Honors consideration 需趕上 Early Action 截止。
+              </div>
             </div>
           </div>
-          <aside class="hero-panel">
-            <strong>快速摘要</strong>
-            Purdue 在 West Lafayette 的工程新生會先進入 First-Year Engineering，完成共同基礎課程後再銜接主修。
-            若同時錄取 John Martinson Honors College，則可走更高強度的 Engineering Honors 路線，特色是小班、較多程式與機器人實作、以及更強的研究與領導發展資源。
+
+          <aside class="hero-side">
+            <div class="glass-card">
+              <strong>快速印象</strong>
+              <p>
+                Purdue 的工程新生在 West Lafayette 先讀 First-Year Engineering，先建立共同基礎，再分流到更細的工程主修。
+                如果同時進入 John Martinson Honors College，通常也會走更高強度、更多實作與研究導向的 Engineering Honors 路線。
+              </p>
+            </div>
+            <div class="mini-photos">
+              <figure class="glass-card">
+                <img src="https://www.purdue.edu/futureengineers/wp-content/uploads/2025/02/Stadium-Mall-0140-copy-1.jpg" alt="Purdue campus at Stadium Mall">
+                <figcaption>校園尺度大，整體氛圍很像研究型大學主場。</figcaption>
+              </figure>
+              <figure class="glass-card">
+                <img src="https://www.purdue.edu/futureengineers/wp-content/uploads/2024/08/AAE-02-drones-14.jpg" alt="Purdue engineering students working with drones">
+                <figcaption>工程氣質很鮮明，學生從第一年就接觸實作與團隊問題。</figcaption>
+              </figure>
+            </div>
           </aside>
-        </div>
-        <div class="stats">
-          <div class="stat">
-            <b>17+</b>
-            West Lafayette 工程主修方向可探索
-          </div>
-          <div class="stat">
-            <b>4 Pillars</b>
-            Honors College 核心主軸：學術、研究、社群全球、領導
-          </div>
-          <div class="stat">
-            <b>Nov. 1</b>
-            Honors consideration 需趕上 Early Action 截止
-          </div>
         </div>
       </div>
     </header>
@@ -394,50 +580,48 @@
         <div class="section-head">
           <div>
             <h2>Engineering Overview</h2>
-            <p>從 Purdue 官方內容來看，工程新生的核心特色不是一進去就綁死主修，而是先用第一年建立共通基礎，再往最適合的工程方向分流。</p>
+            <p>官方資訊最值得注意的地方，是 Purdue 並不是急著要學生一入學就把工程細分到底，而是先用共同第一年把基礎與方向感建立起來。</p>
           </div>
         </div>
-        <div class="grid two">
-          <article class="card">
-            <span class="eyebrow">How It Starts</span>
-            <h3>West Lafayette 先讀 First-Year Engineering</h3>
+        <div class="layout two">
+          <article class="info-card">
+            <h3>West Lafayette 先進入 First-Year Engineering</h3>
             <p>
-              Purdue 官方說明指出，West Lafayette 的工程學生會先進入 FYE，在團隊情境中學 collaboration、communication、math、science、design 與 problem-solving，
-              同時探索各工程主修，之後再接第二年的 major。
+              Purdue Future Engineers 官方說明指出，West Lafayette 工程學生先進入 FYE，
+              在第一年用數學、科學、設計、溝通與 problem-solving 建立共通底盤，再銜接第二年的 major。
             </p>
           </article>
-          <article class="card">
-            <span class="eyebrow">Majors</span>
-            <h3>可先探索，再決定方向</h3>
+          <article class="info-card">
+            <h3>先探索，再選 major</h3>
             <p>
-              Purdue Future Engineers 頁面列出 West Lafayette 可探索的主修包含 AAE、BME、Civil、Electrical、Mechanical、Materials、Nuclear 等多個方向；
-              官方申請資訊也特別提到西拉法葉校區約有 17 個工程 majors 可探索。
+              官方申請資訊提到，West Lafayette 可探索約 17 個 engineering majors。
+              這種設計很適合還在比較 AAE、ME、ECE、BME、Civil 等方向的學生。
             </p>
           </article>
         </div>
-        <div class="grid three">
-          <article class="card">
-            <h3>共同第一年重點</h3>
+        <div class="card-grid three">
+          <article class="info-card">
+            <h3>第一年會學什麼</h3>
             <ul>
-              <li>先打好數學、科學、工程設計、溝通與程式基礎。</li>
-              <li>透過團隊專題與 pathway 體驗工程實作。</li>
-              <li>利用第一年判斷最適合自己的 major。</li>
+              <li>共同打好 math、science、design 與 communication 基礎。</li>
+              <li>透過團隊專題開始適應工程學習方式。</li>
+              <li>在探索 major 的同時建立對自己強項的判斷。</li>
             </ul>
           </article>
-          <article class="card">
-            <h3>常見 FYE Pathways</h3>
+          <article class="info-card">
+            <h3>常見 Pathways</h3>
             <ul>
-              <li>`i2i`：真實工程題目導向的 faculty-led 團隊專題。</li>
-              <li>`EPICS`：和社區或全球夥伴合作解決真實需求。</li>
-              <li>`VIP`：跟著教授與研究團隊做持續型專案。</li>
+              <li>`i2i`：faculty-led 團隊專題，解真實工程問題。</li>
+              <li>`EPICS`：和社區或全球夥伴合作，做有真實需求的設計。</li>
+              <li>`VIP`：加入教授研究團隊，延續型專案更強。</li>
             </ul>
           </article>
-          <article class="card">
-            <h3>為什麼這種設計重要</h3>
+          <article class="info-card">
+            <h3>這制度的好處</h3>
             <ul>
-              <li>對還沒完全確定細分領域的學生更友善。</li>
-              <li>降低太早選錯 major 的風險。</li>
-              <li>讓不同工程方向共享一致的學術起點。</li>
+              <li>不必太早被綁死在單一主修上。</li>
+              <li>降低選錯 major 的風險。</li>
+              <li>讓不同工程領域共享一致起跑線。</li>
             </ul>
           </article>
         </div>
@@ -447,51 +631,82 @@
         <div class="section-head">
           <div>
             <h2>Honors Program</h2>
-            <p>在 Purdue 的語境裡，工程 honors 其實牽涉兩層：一是大學層級的 John Martinson Honors College，二是工程學院裡的 Engineering Honors Program。</p>
+            <p>Purdue 的 honors 對工程學生來說有兩層概念：大學層級的 John Martinson Honors College，以及工程學院內更高強度的 Engineering Honors Program。</p>
           </div>
         </div>
-        <div class="grid two">
-          <article class="card">
-            <span class="eyebrow">JMHC</span>
-            <h3>John Martinson Honors College 是跨領域 honors 核心</h3>
+        <div class="layout two">
+          <article class="info-card">
+            <h3>John Martinson Honors College</h3>
             <p>
-              官方首頁把 JMHC 的使命定位為培養 well-rounded、global leaders，並以四大支柱運作：
-              Interdisciplinary Academics、Undergraduate Research、Community and Global Engagement、Leadership Development。
+              JMHC 官方首頁把它定位為培養 well-rounded、global leaders 的 honors community，
+              核心架構是四大支柱：Interdisciplinary Academics、Undergraduate Research、
+              Community and Global Engagement、Leadership Development。
             </p>
           </article>
-          <article class="card">
-            <span class="eyebrow">Engineering Honors</span>
-            <h3>Engineering Honors 是工程版高強度 First-Year 路線</h3>
+          <article class="info-card">
+            <h3>Engineering Honors Program</h3>
             <p>
-              Purdue Future Engineers FAQ 明確寫到，Engineering Honors Program 是 honors 版本的 First-Year Engineering，
-              比標準 FYE 更有 depth 與 rigor，團隊專題通常也會加入更多 programming 與 robotics 經驗。
+              Purdue Future Engineers FAQ 明確說明，Engineering Honors 是 honors 版本的 First-Year Engineering，
+              比一般 FYE 更有 depth 與 rigor，也更常出現 programming、robotics 與高挑戰專題。
             </p>
           </article>
         </div>
-        <div class="grid three">
-          <article class="card">
-            <h3>Honors 能拿到什麼</h3>
+        <div class="card-grid three">
+          <article class="info-card">
+            <h3>你會得到什麼</h3>
             <ul>
-              <li>更小班的學習環境與 hands-on design experience。</li>
-              <li>研究、導師、專業發展與社群資源更集中。</li>
-              <li>官方 admissions 頁面強調研究、出國、獎學金與職涯優勢。</li>
+              <li>更小班、更多 hands-on design experience。</li>
+              <li>研究、導師、社群與專業發展資源更集中。</li>
+              <li>對想衝研究、獎學金與領導發展的學生特別有利。</li>
             </ul>
           </article>
-          <article class="card">
-            <h3>住宿與社群</h3>
+          <article class="info-card">
+            <h3>住宿與學習社群</h3>
             <ul>
-              <li>Honors College 具有自己的 residential community。</li>
-              <li>官方 admissions 資訊提到 98% 的 first-year honors students 住校。</li>
-              <li>住宿與課程、faculty、advising 空間整合度高。</li>
+              <li>Honors College 有自己的 residential community。</li>
+              <li>官方 admissions 頁面提到 98% 的 first-year honors students 住校。</li>
+              <li>課程、faculty、advising 與生活空間整合度高。</li>
             </ul>
           </article>
-          <article class="card">
+          <article class="info-card">
             <h3>對工程學生的意義</h3>
             <ul>
-              <li>若你喜歡更快節奏與更高強度團隊專題，Engineering Honors 很有吸引力。</li>
-              <li>若你也想拿 honors diploma，還要同步完成 Honors College 要求。</li>
-              <li>官方 FAQ 明說：Purdue 的 honors diploma 是透過 Honors College 取得。</li>
+              <li>如果你喜歡高強度節奏，Engineering Honors 很值得看。</li>
+              <li>若你也想拿 honors diploma，還要完成 Honors College 的要求。</li>
+              <li>官方 FAQ 也清楚說明 honors diploma 是透過 Honors College 取得。</li>
             </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-head">
+          <div>
+            <h2>Campus Energy</h2>
+            <p>這幾張圖都來自 Purdue 官方頁面。把它們放進同一頁後，整體更能看出 Purdue 給人的感覺：不是只是「名校」，而是很有工程手感、校園規模與未來動能的地方。</p>
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <article class="photo-card">
+            <img src="https://www.purdue.edu/futureengineers/wp-content/uploads/2025/02/COE-00-lillyScholars-7-1-copy.jpg" alt="Purdue engineering students on campus">
+            <div class="photo-copy">
+              <h3>學生感很強</h3>
+              <p>Future Engineers 首圖就很有招生頁氛圍，能把學生社群感和校園日常一起帶出來。</p>
+            </div>
+          </article>
+          <article class="photo-card">
+            <img src="https://www.purdue.edu/futureengineers/wp-content/uploads/2024/08/2024_PI_KAL_6030-Edit-1.jpg" alt="Purdue students collaborating in engineering setting">
+            <div class="photo-copy">
+              <h3>合作與實作</h3>
+              <p>畫面不是空泛的形象照，而是很有「一起做事」的工程場景感。</p>
+            </div>
+          </article>
+          <article class="photo-card">
+            <img src="https://www.purdue.edu/home/wp-content/uploads/2023/07/Founders-Park-DSC3463.jpg" alt="Purdue campus scene at Founders Park">
+            <div class="photo-copy">
+              <h3>校園尺度與氛圍</h3>
+              <p>這張把 Purdue 校園的空間感拍得很漂亮，會讓整頁看起來更完整，不只是申請資訊頁。</p>
+            </div>
           </article>
         </div>
       </section>
@@ -500,36 +715,36 @@
         <div class="section-head">
           <div>
             <h2>How To Apply</h2>
-            <p>如果你想走 Purdue engineering + honors，官方流程的關鍵其實很清楚：申請工程，也要同時在申請系統裡表達 Honors College 意願。</p>
+            <p>如果你想走 Purdue engineering + honors，最重要的不是背一堆細節，而是先抓住官方流程的節點。</p>
           </div>
         </div>
         <div class="timeline">
           <article class="step">
-            <div class="label">Step 1</div>
+            <div class="step-label">Step 1</div>
             <div>
-              <h3>申請 College of Engineering</h3>
-              <p>West Lafayette 工程申請人先進入 First-Year Engineering，再在之後銜接 major。</p>
+              <h3>先申請 College of Engineering</h3>
+              <p>West Lafayette 工程新生先進 First-Year Engineering，再銜接 major。</p>
             </div>
           </article>
           <article class="step">
-            <div class="label">Step 2</div>
+            <div class="step-label">Step 2</div>
             <div>
-              <h3>在 Common App 勾選 Honors College</h3>
-              <p>官方 admissions 頁面寫明，要被 Honors College 考慮，必須在申請中回覆 honors 問題。</p>
+              <h3>在 Common App 表達 Honors College 意願</h3>
+              <p>Honors College 的 consideration 需要在申請系統內回答 honors 相關問題。</p>
             </div>
           </article>
           <article class="step">
-            <div class="label">Step 3</div>
+            <div class="step-label">Step 3</div>
             <div>
-              <h3>趕上 11 月 1 日 Early Action</h3>
-              <p>Honors College consideration 需要符合 November 1 Early Action deadline。</p>
+              <h3>趕上 November 1 Early Action</h3>
+              <p>官方 admissions 頁面寫明，Honors College consideration 需要符合 11 月 1 日 Early Action 截止。</p>
             </div>
           </article>
           <article class="step">
-            <div class="label">Step 4</div>
+            <div class="step-label">Step 4</div>
             <div>
-              <h3>若錄取 JMHC，通常會進入 Engineering Honors 路線</h3>
-              <p>Purdue FAQ 表示：被 Honors College 錄取後，工程學生會自動進入 Engineering Honors Program。</p>
+              <h3>若錄取 JMHC，工程學生通常走 Engineering Honors</h3>
+              <p>Purdue Future Engineers FAQ 表示，被 Honors College 錄取後，工程學生通常會進入 Engineering Honors Program。</p>
             </div>
           </article>
         </div>
@@ -539,68 +754,68 @@
         <div class="section-head">
           <div>
             <h2>Best Fit</h2>
-            <p>你可以這樣快速判斷自己比較適合哪一條路。</p>
+            <p>你可以把它簡單理解成：一般 FYE 比較像先探索，Engineering Honors 則像把節奏與深度整體拉高一級。</p>
           </div>
         </div>
-        <div class="grid two">
-          <article class="card">
+        <div class="card-grid two">
+          <article class="info-card">
             <h3>適合一般 FYE 的學生</h3>
             <ul>
-              <li>想先探索多個工程領域，再慢慢定 major。</li>
-              <li>希望保有比較標準的第一年節奏。</li>
-              <li>想要完整工程資源，但不一定要 honors 額外要求。</li>
+              <li>還想先探索不同工程方向。</li>
+              <li>希望第一年保有比較標準的節奏。</li>
+              <li>想先穩穩建立工程基礎，再做進一步規劃。</li>
             </ul>
           </article>
-          <article class="card">
+          <article class="info-card">
             <h3>適合 Engineering Honors 的學生</h3>
             <ul>
               <li>喜歡高挑戰、小班與更密集的團隊專題。</li>
-              <li>對程式、robotics、研究與領導發展有高度興趣。</li>
-              <li>願意同步規劃 Honors College 課程與畢業要求。</li>
+              <li>對程式、robotics、研究與領導發展特別有興趣。</li>
+              <li>願意同步規劃 Honors College 的額外要求。</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="sources">
         <div class="section-head">
           <div>
             <h2>Official Sources</h2>
-            <p>以下都來自 Purdue 官方網站，方便你之後自己再點進去核對與延伸閱讀。</p>
+            <p>以下內容與圖片都取自 Purdue 官方站點。我也把 favicon 改成 Purdue Brand Studio 提供的官方版本。</p>
           </div>
         </div>
         <div class="source-list">
-          <a class="source-link" href="https://www.purdue.edu/futureengineers/first-year-engineering/" target="_blank" rel="noreferrer">
-            <strong>First Year Engineering Program | Purdue University</strong>
-            FYE 架構、West Lafayette 路徑、EPICS / VIP / Honors 說明
+          <a class="source-card" href="https://www.purdue.edu/futureengineers/first-year-engineering/" target="_blank" rel="noreferrer">
+            <strong>First-Year Engineering Program</strong>
+            FYE 架構、West Lafayette 路線與 pathway 說明。
           </a>
-          <a class="source-link" href="https://www.purdue.edu/futureengineers/common-questions/" target="_blank" rel="noreferrer">
+          <a class="source-card" href="https://www.purdue.edu/futureengineers/common-questions/" target="_blank" rel="noreferrer">
             <strong>Common Questions | Office of Future Engineers</strong>
-            Engineering Honors 是 honors 版本 FYE、申請條件與 honors diploma 說明
+            Engineering Honors 與 honors diploma 的重點說明。
           </a>
-          <a class="source-link" href="https://www.purdue.edu/futureengineers/apply/" target="_blank" rel="noreferrer">
-            <strong>Applying to Purdue Engineering | Office of Future Engineers</strong>
-            申請 College of Engineering、先讀 FYE、探索約 17 個 engineering majors
+          <a class="source-card" href="https://www.purdue.edu/futureengineers/apply/" target="_blank" rel="noreferrer">
+            <strong>Applying to Purdue Engineering</strong>
+            工程申請方式與 major 探索資訊。
           </a>
-          <a class="source-link" href="https://www.purdue.edu/futureengineers/" target="_blank" rel="noreferrer">
-            <strong>Office of Future Engineers</strong>
-            工程主修清單、學生 outcomes 與整體 engineering 資訊
-          </a>
-          <a class="source-link" href="https://honors.purdue.edu/" target="_blank" rel="noreferrer">
+          <a class="source-card" href="https://honors.purdue.edu/" target="_blank" rel="noreferrer">
             <strong>John Martinson Honors College</strong>
-            JMHC 使命、四大支柱、學術與研究資源
+            JMHC 官方首頁與四大支柱。
           </a>
-          <a class="source-link" href="https://www.admissions.purdue.edu/academics/honorscollege.php" target="_blank" rel="noreferrer">
+          <a class="source-card" href="https://www.admissions.purdue.edu/academics/honorscollege.php" target="_blank" rel="noreferrer">
             <strong>Honors College | Purdue Undergraduate Admissions</strong>
-            Early Action 截止、holistic review、住校與 honors 優勢
+            Early Action、住校與 honors benefits 說明。
           </a>
-          <a class="source-link" href="https://engineering.purdue.edu/Honors" target="_blank" rel="noreferrer">
-            <strong>Engineering Honors Program | Purdue University</strong>
-            工程 honors 官方介紹、小班與 design experience
+          <a class="source-card" href="https://engineering.purdue.edu/Honors" target="_blank" rel="noreferrer">
+            <strong>Engineering Honors Program</strong>
+            Purdue Engineering 官方 Honors 頁面與 banner 圖片來源。
+          </a>
+          <a class="source-card" href="https://marcom.purdue.edu/toolbox/digital-media/web-templates/" target="_blank" rel="noreferrer">
+            <strong>Purdue Brand Studio Web Templates</strong>
+            favicon 與網站品牌資源來源頁。
           </a>
         </div>
         <p class="footnote">
-          註：本頁內容依 2026 年 3 月 13 日可查到的 Purdue 官方頁面整理；若之後申請政策、主修名單或 honors 條件更新，請以官方網站最新公告為準。
+          更新時間：2026 年 3 月 13 日。若 Purdue 之後更新申請政策、圖片資產或 Honors 規則，請以官方網站最新資訊為準。
         </p>
       </section>
     </main>
