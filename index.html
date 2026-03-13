@@ -159,14 +159,20 @@
     h1 {
       margin-top: 20px;
       max-width: none;
-      font-size: clamp(3rem, 6vw, 5.6rem);
-      line-height: 1.08;
-      text-wrap: balance;
+      font-size: clamp(2.1rem, 4.2vw, 3.9rem);
+      line-height: 1.12;
     }
 
     .hero-title-line {
       display: block;
+      width: fit-content;
+      max-width: 100%;
       white-space: nowrap;
+    }
+
+    .hero-title-line:last-child {
+      margin-left: auto;
+      text-align: right;
     }
 
     .lead {
@@ -467,7 +473,13 @@
       }
 
       .hero-title-line {
+        width: auto;
         white-space: normal;
+      }
+
+      .hero-title-line:last-child {
+        margin-left: 0;
+        text-align: left;
       }
 
       .hero-topbar,
